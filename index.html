@@ -159,8 +159,7 @@ button:focus {
 <h2>Project</h2>
 <div class="link-item project-links">
   <a class="link" href="https://zcodxe.github.io/ip/" target="_blank">➥ IPcheck</a>
-  <a class="link" href="" target="_blank">➥ </a>
-  <a class="link" href="" target="_blank">➥ </a>
+  <a class="link" href="link/ip-intelligence.html" target="_blank"></a>
   
 </div>
 <div class="divider"></div>
@@ -181,7 +180,7 @@ button:focus {
 </div>
 
 <dialog id="confirmBox">
-<p>Open this link?</p>
+<p>redirect</p>
 <div class="dialog-buttons">
   <button class="cancel" onclick="closeDialog()">Cancel</button>
   <button class="open" id="openBtn">Open</button>
@@ -191,7 +190,7 @@ button:focus {
 <script>
 let targetLink = "";  
   
-document.querySelectorAll(".connect-section .link").forEach(link => {
+document.querySelectorAll(".link").forEach(link => {
   link.addEventListener("click", function(e) {
     e.preventDefault();
     targetLink = this.dataset.url;
