@@ -1,53 +1,70 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#333;background:#fafafa;padding:35px 10px;transition:.3s}
-.dark{background:#121212;color:#eee}
-.container{max-width:600px;margin:auto;background:#fff;padding:40px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:.3s}
-.dark .container{background:#1e1e1e}
-h1{font-size:28px;margin-bottom:8px;opacity:.75;cursor:pointer}
-.subtitle{color:#666;margin-bottom:30px;font-size:16px}
-.dark .subtitle{color:#aaa}
-section{margin-bottom:20px}
-h2{font-size:20px;margin-bottom:12px;color:#222;opacity:.8}
-.dark h2{color:#ddd}
-.project-links{display:flex;flex-direction:column;margin-left:15%}
-.link{color:#06c;cursor:pointer;word-break:break-all;font-size:25px;text-decoration:none;padding:0 8px;border-radius:8px}
-.dark .link{color:#4da3ff}
-.connect-section h2{font-size:18px;color:#666}
-.connect-section .link{color:#666;font-size:16px;padding:0}
-.dark .connect-section .link{color:#aaa}
-.divider{height:2px;width:100%;background:#626262;margin:14px 0;border-radius:1px}
-dialog{border:none;border-radius:14px;padding:35px 30px;width:450px;max-width:90%;position:fixed;top:45%;left:50%;transform:translate(-50%,-50%) scale(.8);box-shadow:0 20px 50px rgba(0,0,0,.3);text-align:center;opacity:0;transition:.25s}
+:root{
+--b:#fafafa;--t:#333;--c:#fff;--l:#06c;--m:#666;--d:#626262;
+--db:#121212;--dt:#eee;--dc:#1e1e1e;--dl:#4da3ff;--dm:#aaa;
+}
+.dark{
+--b:var(--db);--t:var(--dt);--c:var(--dc);--l:var(--dl);--m:var(--dm);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--t);background:var(--b);padding:35px 10px;transition:.3s}
+
+.c{max-width:600px;margin:auto;background:var(--c);padding:40px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+
+h1{font-size:28px;opacity:.75;cursor:pointer;margin-bottom:8px}
+.subtitle{color:var(--m);margin-bottom:30px}
+h2{font-size:20px;margin-bottom:12px;opacity:.8}
+
+.p{display:flex;flex-direction:column;margin-left:15%}
+.l{color:var(--l);font-size:25px;text-decoration:none}
+.cs h2{font-size:18px;color:var(--m)}
+.cs .l{font-size:16px;color:var(--m)}
+
+.d{height:2px;background:var(--d);margin:14px 0;border-radius:1px}
+
+/* dialog */
+dialog{
+border:none;border-radius:14px;padding:35px 30px;width:450px;max-width:90%;
+position:fixed;top:45%;left:50%;transform:translate(-50%,-50%) scale(.8);
+box-shadow:0 20px 50px rgba(0,0,0,.3);text-align:center;
+background:var(--c);color:var(--t);opacity:0;transition:.25s
+}
 dialog[open]{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
 .dialog-buttons{margin-top:25px;display:flex;justify-content:center;gap:20px}
-button{padding:10px 22px;border:none;border-radius:8px;cursor:pointer;font-size:18px}
-.open{background:#06c;color:#fff}.cancel{background:#ddd}
-</style></head>
+button{padding:10px 22px;border:none;border-radius:8px;font-size:18px;cursor:pointer}
+.open{background:var(--l);color:#fff}
+.cancel{background:#ddd;color:#000}
+.dark .cancel{background:#444;color:#eee}
+</style>
+</head>
 
 <body>
-<div class="container">
+<div class="c">
 <h1 id="themeToggle">zcodxe</h1>
 <p class="subtitle">Developer | Creator</p>
-<div class="divider"></div>
+<div class="d"></div>
 
 <section>
 <h2>Project</h2>
-<div class="project-links">
-<a class="link" href="https://zcodxe.github.io/ip/" target="_blank">➥ IP-check</a>
-<a class="link" href="link/ip-intelligence.html" target="_blank">➥ IP-max</a>
-<a class="link" href="https://github.com/zcodxe?tab=repositories" target="_blank">➥ All repo</a>
+<div class="p">
+<a class="l" href="https://zcodxe.github.io/ip/" target="_blank">➥ IP-check</a>
+<a class="l" href="link/ip-intelligence.html" target="_blank">➥ IP-max</a>
+<a class="l" href="https://github.com/zcodxe?tab=repositories" target="_blank">➥ All repo</a>
 </div>
-<div class="divider"></div>
+<div class="d"></div>
 </section>
 
-<section class="connect-section">
+<section class="cs">
 <h2>Connect</h2>
 <div>
-<a class="link" href="https://github.com/zcodxe">GitHub</a> |
-<a class="link" href="mailto:the.worrier589@aleeas.com">Email</a>
+<a class="l" href="https://github.com/zcodxe">GitHub</a> |
+<a class="l" href="mailto:the.worrier589@aleeas.com">Email</a>
 </div>
 </section>
 </div>
@@ -62,7 +79,7 @@ button{padding:10px 22px;border:none;border-radius:8px;cursor:pointer;font-size:
 
 <script>
 let targetLink="";
-document.querySelectorAll(".link").forEach(l=>{
+document.querySelectorAll(".l").forEach(l=>{
 l.onclick=e=>{
 e.preventDefault();
 targetLink=l.href;
@@ -70,8 +87,6 @@ confirmBox.showModal();
 }});
 function closeDialog(){confirmBox.close()}
 openBtn.onclick=()=>{window.open(targetLink,"_blank");closeDialog()}
-
-// theme toggle
 themeToggle.onclick=()=>document.body.classList.toggle("dark")
 </script>
 
