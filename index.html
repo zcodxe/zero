@@ -1,213 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio</title>
-
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  line-height:1.6;
-  color:#333;
-  background:#fafafa;
-  padding:35px 10px;
-}
-
-.container{
-  max-width:600px;
-  margin:0 auto;
-  background:white;
-  padding:40px;
-  border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
-}
-
-h1{
-  font-size:28px;
-  margin-bottom:8px;
-  opacity:0.75;
-}
-
-.subtitle{
-  color:#666;
-  margin-bottom:30px;
-  font-size:16px;
-}  
-
-section{
-  margin-bottom:20px;
-}
-
-h2{
-  font-size:20px;
-  margin-bottom:12px;
-  color:#222;
-  opacity:.80;
-}
-
-.project-links {
-  display: flex;
-  flex-direction: column;
-  margin-left: 15%;   
-  gap:0px;
-}
-
-.link{
-  color:#0066cc;
-  cursor:pointer;
-  word-break:break-all;
-  font-size:25px;
-  text-decoration:none;
-  padding:0px 8px;
-  border-radius:8px;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.connect-section h2 {
-  font-size:18px;        
-  color: #666;
-}
-
-.connect-section .link-item {
-  text-align:left;
-}
-
-.connect-section .link {
-  color:#666;
-  font-size:16px;
-  padding:0;
-  border-radius:0;
-  background:none;
-  transform:none;
-}
-
-.divider {
-  height:2px;
-  width:100%;
-  background-color:#626262;
-  margin:14px 0;
-  border-radius:1px;
-}
-
-dialog{
-  border:none;
-  border-radius:14px;
-  padding:35px 30px;
-  width:450px;
-  max-width:90%;
-  position:fixed;
-  top:45%;
-  left:50%;
-  transform:translate(-50%,-50%) scale(0.8);
-  box-shadow:0 20px 50px rgba(0,0,0,0.3);
-  text-align:center;
-  opacity:0;
-  transition:transform 0.25s ease, opacity 0.25s ease; 
-}
-
-dialog[open]{
-  opacity:1;
-  transform:translate(-50%,-50%) scale(1);
-}
-
-.dialog-buttons{
-  margin-top:25px;
-  display:flex;
-  justify-content:center;
-  gap:20px;
-}
-
-button{
-  padding:10px 22px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:18px;
-}
-
-button:focus {
-  outline:none;
-  box-shadow:none;
-}
-
-.open{
-  background:#0066cc;
-  color:white;
-}
-
-.cancel{
-  background:#ddd;
-}
-
-</style>
-</head>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#333;background:#fafafa;padding:35px 10px;transition:.3s}
+.dark{background:#121212;color:#eee}
+.container{max-width:600px;margin:auto;background:#fff;padding:40px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:.3s}
+.dark .container{background:#1e1e1e}
+h1{font-size:28px;margin-bottom:8px;opacity:.75;cursor:pointer}
+.subtitle{color:#666;margin-bottom:30px;font-size:16px}
+.dark .subtitle{color:#aaa}
+section{margin-bottom:20px}
+h2{font-size:20px;margin-bottom:12px;color:#222;opacity:.8}
+.dark h2{color:#ddd}
+.project-links{display:flex;flex-direction:column;margin-left:15%}
+.link{color:#06c;cursor:pointer;word-break:break-all;font-size:25px;text-decoration:none;padding:0 8px;border-radius:8px}
+.dark .link{color:#4da3ff}
+.connect-section h2{font-size:18px;color:#666}
+.connect-section .link{color:#666;font-size:16px;padding:0}
+.dark .connect-section .link{color:#aaa}
+.divider{height:2px;width:100%;background:#626262;margin:14px 0;border-radius:1px}
+dialog{border:none;border-radius:14px;padding:35px 30px;width:450px;max-width:90%;position:fixed;top:45%;left:50%;transform:translate(-50%,-50%) scale(.8);box-shadow:0 20px 50px rgba(0,0,0,.3);text-align:center;opacity:0;transition:.25s}
+dialog[open]{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.dialog-buttons{margin-top:25px;display:flex;justify-content:center;gap:20px}
+button{padding:10px 22px;border:none;border-radius:8px;cursor:pointer;font-size:18px}
+.open{background:#06c;color:#fff}.cancel{background:#ddd}
+</style></head>
 
 <body>
-
 <div class="container">
-<h1>zcodxe</h1>
+<h1 id="themeToggle">zcodxe</h1>
 <p class="subtitle">Developer | Creator</p>
 <div class="divider"></div>
 
 <section>
 <h2>Project</h2>
-<div class="link-item project-links">
-  <a class="link" href="https://zcodxe.github.io/ip/" target="_blank">➥ IP-check</a>
-  <a class="link" href="link/ip-intelligence.html" target="_blank">➥ IP-max</a>
-  <a class="link" href="https://github.com/zcodxe?tab=repositories" target="_blank">➥ All repo</a>
-  
+<div class="project-links">
+<a class="link" href="https://zcodxe.github.io/ip/" target="_blank">➥ IP-check</a>
+<a class="link" href="link/ip-intelligence.html" target="_blank">➥ IP-max</a>
+<a class="link" href="https://github.com/zcodxe?tab=repositories" target="_blank">➥ All repo</a>
 </div>
 <div class="divider"></div>
 </section>
 
 <section class="connect-section">
 <h2>Connect</h2>
-<div class="link-item">
-  <a class="link" href="https://github.com/zcodxe">GitHub</a>
-  <span> | </span>
-  <a class="link" href="mailto:the.worrier589@aleeas.com">Email</a>
-  
-  </div>
+<div>
+<a class="link" href="https://github.com/zcodxe">GitHub</a> |
+<a class="link" href="mailto:the.worrier589@aleeas.com">Email</a>
+</div>
 </section>
-  
-
 </div>
 
 <dialog id="confirmBox">
 <p>redirect</p>
 <div class="dialog-buttons">
-  <button class="cancel" onclick="closeDialog()">Cancel</button>
-  <button class="open" id="openBtn">Open</button>
+<button class="cancel" onclick="closeDialog()">Cancel</button>
+<button class="open" id="openBtn">Open</button>
 </div>
 </dialog>
 
 <script>
-let targetLink = "";  
-  
-document.querySelectorAll(".link").forEach(link => {
-  link.addEventListener("click", function(e) {
-    e.preventDefault();
-    targetLink = this.href;
-    const dialog = document.getElementById("confirmBox");
-    dialog.showModal();
-  });
-});
+let targetLink="";
+document.querySelectorAll(".link").forEach(l=>{
+l.onclick=e=>{
+e.preventDefault();
+targetLink=l.href;
+confirmBox.showModal();
+}});
+function closeDialog(){confirmBox.close()}
+openBtn.onclick=()=>{window.open(targetLink,"_blank");closeDialog()}
 
-function closeDialog(){
-  document.getElementById("confirmBox").close();
-}
-document.getElementById("openBtn").onclick = function(){
-  window.open(targetLink, "_blank");
-  closeDialog();
-};
+// theme toggle
+themeToggle.onclick=()=>document.body.classList.toggle("dark")
 </script>
 
-</body>
-  </html>
+</body></html>
