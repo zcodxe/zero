@@ -170,9 +170,9 @@ button:focus {
 <section class="connect-section">
 <h2>Connect</h2>
 <div class="link-item">
-  <a class="link" data-url="https://github.com/zcodxe">GitHub</a>
+  <a class="link" href="https://github.com/zcodxe">GitHub</a>
   <span> | </span>
-  <a class="link" data-url="mailto:the.worrier589@aleeas.com">Email</a>
+  <a class="link" href="mailto:the.worrier589@aleeas.com">Email</a>
   
   </div>
 </section>
@@ -194,7 +194,7 @@ let targetLink = "";
 document.querySelectorAll(".link").forEach(link => {
   link.addEventListener("click", function(e) {
     e.preventDefault();
-    targetLink = this.dataset.url || this.href;
+    targetLink = this.href;
     const dialog = document.getElementById("confirmBox");
     dialog.showModal();
   });
