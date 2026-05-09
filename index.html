@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Developer & Builder. Creating simple, fast tools with clean code.">
+  <meta name="theme-color" content="#387ed1">
+  <title>zcodxe - Developer & Builder</title>
+  <style>
+    :root {
+      --bg: #f0f0f0;
+      --white: #fff;
+      --text: #1a1a1a;
+      --muted: #666;
+      --brand: #387ed1;
+      --gap: 1rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111;
+        --white: #202020;
+        --text: #bbc3cc;
+        --muted: #999;
+        --brand: #5a9eff;
+      }
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scrollbar-gutter: stable; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: 0.3s ease;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .hero {
+      background: var(--white);
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .hero-image {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: var(--brand);
+      flex-shrink: 0;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(58, 143, 239, 0.2);
+    }
+
+    .hero-image img {
+      
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-username {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--brand);
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2rem, 5vw, 3.125rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: clamp(0.9375rem, 2vw, 1.125rem);
+      color: var(--muted);
+      max-width: 580px;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 0.875rem 1.75rem;
+      border: 1.5px solid;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: var(--white);
+      border-color: var(--brand);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .btn-secondary:hover {
+      background: var(--brand);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section h2 {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 800;
+      margin-bottom: 2.5rem;
+    }
+
+    .links-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .link-item {
+      background: var(--white);
+      border: 1.5px solid;
+      border-color: var(--white);
+      padding: 1.375rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s ease;
+    }
+
+    .link-item:hover {
+      border-color: var(--brand);
+      box-shadow: 0 4px 12px rgba(58, 143, 239, 0.15);
+      transform: translateX(4px);
+    }
+
+    .link-arrow {
+      margin-left: 1rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1.5px solid;
+      border-color: var(--muted);
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    #projects,
+    #connect {
+      scroll-margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .btn-group { flex-direction: column; }
+      .btn { width: 100%; text-align: center; }
+      .link-item { padding: 1.25rem 1rem; }
+      .hero-image { width: 120px; height: 120px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-image">
+            <img src="https://avatars.githubusercontent.com/u/246634901?v=4" alt="GitHub Profile">
+          </div>
+          <div class="hero-username">@zcodxe</div>
+          <div class="hero-text">
+            <h1>Developer & Builder</h1>
+            <p>I build simple, fast tools with clean code and minimal design.</p>
+            <div class="btn-group">
+              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="https://github.com/zcodxe" target="_blank" class="btn btn-secondary">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="links-grid">
+          <a href="https://zcodxe.github.io/ip/" target="_blank" class="link-item">
+            <span>IP-check</span><span class="link-arrow">❯</span>
+          </a>
+          <a href="https://zcodxe.github.io/ip/max/max.html" target="_blank" class="link-item">
+            <span>IP-max</span><span class="link-arrow">❯</span>
+          </a>
+          <a href="https://github.com/zcodxe?tab=repositories" target="_blank" class="link-item">
+            <span>All repositories</span><span class="link-arrow">❯❯</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="connect">
+      <div class="container">
+        <h2>Connect</h2>
+        <div class="links-grid">
+          <a href="mailto:the.worrier589@aleeas.com" class="link-item">
+            <span>Email</span><span class="link-arrow">🤝 - ⌯⌲</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container"> 2026 zcodxe</div>
+  </footer>
+</body>
+</html>
